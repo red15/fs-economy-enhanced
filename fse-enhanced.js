@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name        FS Economy Enhancement
+// @name        FS Economy: Enhanced
 // @namespace   nightwalkers
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
 // @include     http://www.fseconomy.net:81/*
-// @version     7
+// @version     8
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
