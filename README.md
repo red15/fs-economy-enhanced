@@ -7,6 +7,7 @@ Current Features
 ================
 
 * Calculate income of passenger flights per NM and per passenger
+* Convert cargo into 77kg blocks so the price is comparable to a passenger
 
 Screenshots
 ===========

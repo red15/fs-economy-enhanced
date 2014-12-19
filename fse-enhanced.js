@@ -5,7 +5,7 @@
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
 // @include     http://www.fseconomy.net:81/*
-// @version     8
+// @version     9
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
@@ -55,10 +55,27 @@ for (var i = 0; i < tables.length; i++) {
                 break;
             }
         } else {
-            var qty = parseFloat(row.cells[col_cargo].textContent.split(' ')[0]) || 1,
-                range = parseFloat(row.cells[col_nm].textContent),
-                price = parseFloat(row.cells[col_pay].textContent.replace('$', '').replace(',','')),
-                calc = 0, rounding = 2;
+            var qty = 1, range, price, cargo = false, calc = 0, rounding = 2;
+            try {
+                if (row.cells[col_cargo].textContent.search(/(\d+) .*$/) != -1) {
+                    qty = row.cells[col_cargo].textContent.match(/(\d+) .*$/)[1];
+                }
+                if (row.cells[col_cargo].textContent.search(/kg$/) != -1) {
+                    qty = row.cells[col_cargo].textContent.match(/(\d+)kg$/)[1];
+                    cargo = true;
+                }
+            } catch (e) {
+                console.log(e, row.cells[col_cargo.textContent]);
+            }
+            qty = parseFloat(qty || 1);
+            if (cargo) {
+                // 77 Kg per person
+                console.debug(qty,'kg of cargo counts for', Math.ceil(qty/77), 'persons');
+                qty = Math.ceil(qty / 77);
+                row.cells[col_cargo].textContent += ' (' + qty + ' passengers)';
+            }
+            range = parseFloat(row.cells[col_nm].textContent);
+            price = parseFloat(row.cells[col_pay].textContent.replace('$', '').replace(',',''));
 
             if (qty && range && price) {
                 while (calc === 0) {
