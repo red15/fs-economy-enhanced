@@ -30,10 +30,10 @@ for (var i = 0; i < tables.length; i++) {
     table.rows[0].appendChild(col_head);
 
     var col_pay, col_nm, col_cargo;
-    // Skipping first row (header)
     for (var x = 0; x < table.rows.length; x++) {
         var row = table.rows[x];
         if (x == 0) {
+            // Parsing the first row (header) to find relevant column numbers
             for (var y = 0; y < row.cells.length; y++) {
                 var cell = row.cells[y];
                 // Find the table headings
@@ -50,6 +50,10 @@ for (var i = 0; i < tables.length; i++) {
                     console.debug('Cargo is in column', y);
                     col_cargo = y;
                 }
+            }
+            if (col_pay === undefined || col_nm == undefined || col_cargo == undefined) {
+                console.error('Unable to find column headers:', col_pay, col_nm, col_cargo);
+                break;
             }
         } else {
             var qty = parseFloat(row.cells[col_cargo].textContent.split(' ')[0]) || 1,
