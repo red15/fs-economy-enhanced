@@ -37,7 +37,6 @@ for (var i = 0; i < tables.length; i++) {
             for (var y = 0; y < row.cells.length; y++) {
                 var cell = row.cells[y];
                 // Find the table headings
-                debugger;
                 if (cell.textContent.indexOf('Pay') == 0) {
                     console.debug('Payment is in column', y);
                     col_pay = y;
