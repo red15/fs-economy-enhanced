@@ -4,11 +4,12 @@
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
-// @version     3
+// @version     4
 // @grant       none
 // ==/UserScript==
 
 function check_table_valid(table) {
+    if (table.classList.contains('assigmentTable')) return true;
     if (table.classList.contains('assignmentTable')) return true;
     if (table.classList.contains('holdTable')) return true;
     return false;
