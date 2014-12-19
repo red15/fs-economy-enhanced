@@ -4,7 +4,7 @@
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
-// @version     4
+// @version     5
 // @grant       none
 // ==/UserScript==
 
@@ -35,15 +35,16 @@ for (var i = 0; i < tables.length; i++) {
             for (var y = 0; y < row.cells.length; y++) {
                 var cell = row.cells[y];
                 // Find the table headings
-                if (cell.textContent.contains('Pay')) {
+                debugger;
+                if (cell.textContent.indexOf('Pay') == 0) {
                     console.debug('Payment is in column', y);
                     col_pay = y;
                 }
-                if (cell.textContent.contains('NM')) {
+                if (cell.textContent.indexOf('NM') == 0) {
                     console.debug('Distance is in column', y);
                     col_nm = y;
                 }
-                if (cell.textContent.contains('Cargo')) {
+                if (cell.textContent.indexOf('Cargo') == 0) {
                     console.debug('Cargo is in column', y);
                     col_cargo = y;
                 }
