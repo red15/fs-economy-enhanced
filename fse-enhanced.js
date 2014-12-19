@@ -4,8 +4,9 @@
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
-// @version     5
+// @version     6
 // @grant       none
+// @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
 
 function check_table_valid(table) {
