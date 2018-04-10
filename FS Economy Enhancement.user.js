@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name        FS Economy Enhancement
+// @author      Niels Huylebroeck
 // @namespace   nightwalkers
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
