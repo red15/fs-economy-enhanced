@@ -89,6 +89,7 @@ for (var i = 0; i < tables.length; i++) {
 
             new_cell = document.createElement('td');
             new_cell.textContent = '$'+calc.toString();
+            new_cell.setAttribute('class','numeric');
             row.appendChild(new_cell);
         }
     }
