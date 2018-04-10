@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name        FS Economy: Enhanced
+// @name        FS Economy Enhancement
 // @namespace   nightwalkers
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
 // @include     http://www.fseconomy.net:81/*
-// @version     9
+// @version     10
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
@@ -81,7 +81,7 @@ for (var i = 0; i < tables.length; i++) {
                 while (calc === 0) {
                     calc = Math.round( (price / qty / range) * Math.pow(10, rounding) ) / Math.pow(10, rounding);
                     rounding++;
-                }                
+                }
             } else {
                 calc == NaN;
             }
