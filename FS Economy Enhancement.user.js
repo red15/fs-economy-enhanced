@@ -21,7 +21,7 @@ function check_table_valid(table) {
 var tables = document.getElementsByTagName('table');
 for (var i = 0; i < tables.length; i++) {
     var table = tables[i];
-    if (!check_table_valid(table)) continue
+    if (!check_table_valid(table)) continue;
     // Poor man's jQuery
     console.debug('Table found', table);
 
@@ -84,7 +84,7 @@ for (var i = 0; i < tables.length; i++) {
                     rounding++;
                 }
             } else {
-                calc == NaN;
+                calc = NaN;
             }
 
             new_cell = document.createElement('td');
