@@ -1,11 +1,13 @@
 // ==UserScript==
-// @name        FS Economy: Enhanced
+// @name        FS Economy Enhancement
+// @author      Niels Huylebroeck
 // @namespace   nightwalkers
 // @description Improvements for FS Economy usability
 // @include     http://server.fseconomy.net/*
 // @include     http://server.fseconomy.net:81/*
 // @include     http://www.fseconomy.net:81/*
-// @version     9
+// @include     http://server.fseconomy.org/*
+// @version     10
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
@@ -20,7 +22,7 @@ function check_table_valid(table) {
 var tables = document.getElementsByTagName('table');
 for (var i = 0; i < tables.length; i++) {
     var table = tables[i];
-    if (!check_table_valid(table)) continue
+    if (!check_table_valid(table)) continue;
     // Poor man's jQuery
     console.debug('Table found', table);
 
@@ -81,13 +83,14 @@ for (var i = 0; i < tables.length; i++) {
                 while (calc === 0) {
                     calc = Math.round( (price / qty / range) * Math.pow(10, rounding) ) / Math.pow(10, rounding);
                     rounding++;
-                }                
+                }
             } else {
-                calc == NaN;
+                calc = NaN;
             }
 
             new_cell = document.createElement('td');
             new_cell.textContent = '$'+calc.toString();
+            new_cell.setAttribute('class','numeric');
             row.appendChild(new_cell);
         }
     }
