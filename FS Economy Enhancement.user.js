@@ -7,7 +7,7 @@
 // @include     http://server.fseconomy.net:81/*
 // @include     http://www.fseconomy.net:81/*
 // @include     http://server.fseconomy.org/*
-// @version     10
+// @version     11
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
@@ -93,5 +93,9 @@ for (var i = 0; i < tables.length; i++) {
             new_cell.setAttribute('class','numeric');
             row.appendChild(new_cell);
         }
+    }
+
+    if (typeof jQuery !== 'undefined') {
+        jQuery(table).trigger('updateAll');
     }
 }
