@@ -7,6 +7,10 @@
 // @include     http://server.fseconomy.net:81/*
 // @include     http://www.fseconomy.net:81/*
 // @include     http://server.fseconomy.org/*
+// @include     https://server.fseconomy.net/*
+// @include     https://server.fseconomy.net:81/*
+// @include     https://www.fseconomy.net:81/*
+// @include     https://server.fseconomy.org/*
 // @version     11
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
