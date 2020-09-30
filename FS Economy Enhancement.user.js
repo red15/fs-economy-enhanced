@@ -11,7 +11,7 @@
 // @include     https://server.fseconomy.net:81/*
 // @include     https://www.fseconomy.net:81/*
 // @include     https://server.fseconomy.org/*
-// @version     11
+// @version     12
 // @grant       none
 // @update      https://greasyfork.org/scripts/7054-fs-economy-enhancement/code/FS%20Economy%20Enhancement.user.js
 // ==/UserScript==
